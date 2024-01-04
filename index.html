@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Frequency Sine Wave Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<div id="container">
+    <label class="custom-label" for="waveformSelector">Waveform:</label>
+    <select id="waveformSelector">
+        <option value="variableSine">Variable Sine Wave</option>
+        <option value="sawtooth">Sawtooth Wave</option>
+        <option value="triangle">Triangle Wave</option>
+        <option value="square">square Wave</option>
+    </select>
+    <label class="custom-label" for="frequencySlider">Frequency: </label>
+    <input type="range" id="frequencySlider" min="1" max="20" value="1" step="0.1">
+    <span id="frequencyValue" class="custom-span">1</span>
+
+    <button id="generateButton" class="generate-button">Generate SVG</button>
+    <a id="downloadLink" style="display: none;" download="variable_frequency_wave.svg">Download SVG</a>
+
+    <!-- SVG preview container -->
+    <div id="previewContainer">
+        <svg id="preview" width="800" height="100" xmlns="http://www.w3.org/2000/svg">
+            <path fill="none" stroke="white" stroke-width="2" />
+        </svg>
+    </div>
+</div>
+<script src="waveFunctions.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
