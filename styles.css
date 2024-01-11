@@ -249,9 +249,10 @@ body {
 .custom-span {
     position: absolute;
     font-family: 'IBM Plex Mono', monospace;
+    font-size: 16px;
     /* Initial position; will be updated by JavaScript */
     left: 0;
-    top: 30px;
+    top: 40px;
     /* Adjust as needed based on your design */
     color: #FFECD1;
 }
