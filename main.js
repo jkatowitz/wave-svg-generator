@@ -83,3 +83,31 @@ document.getElementById('frequencySlider').addEventListener('input', function ()
     document.getElementById('frequencyValue').textContent = this.value;
     updatePreview();
 });
+
+document.getElementById('frequencySlider').addEventListener('input', function() {
+    var slider = this;
+    var valueSpan = document.getElementById('frequencyValue');
+
+    // Calculate the percentage position of the slider
+    var percent = (slider.value - slider.min) / (slider.max - slider.min);
+
+    // Consider the width of the thumb and value span for centering
+    var thumbWidth = 0.1; // Width of the slider thumb
+    var valueSpanWidth = valueSpan.offsetWidth; // Get the width of the value span
+    var offset = (thumbWidth - valueSpanWidth) / 2; // Calculate the offset to center the value span
+
+    // Calculate the new position
+    var spanPosition = percent * slider.offsetWidth + offset;
+
+    // Update the position of the span
+    valueSpan.style.left = spanPosition + 'px';
+    valueSpan.textContent = slider.value;
+});
+
+document.getElementById('waveformSelector').addEventListener('click', function(event) {
+    this.classList.toggle('active');
+    var arrow = document.querySelector('.custom-arrow');
+    if (arrow) {
+        arrow.classList.toggle('active');
+    }
+});

@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variable Frequency Sine Wave Generator</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<div id="container" class="container-v">
-    <div class="container-controls">
-        <label class="custom-label" for="waveformSelector">Waveform:</label>
-        <select id="waveformSelector">
-            <option value="variableSine">Variable Sine Wave</option>
-            <option value="sawtooth">Sawtooth Wave</option>
-            <option value="triangle">Triangle Wave</option>
-            <option value="square">square Wave</option>
-        </select>
-    </div>
-    <div class="container-controls">
-        <label class="custom-label" for="frequencySlider">Frequency: </label>
-        <input type="range" id="frequencySlider" min="1" max="20" value="1" step="0.1">
-        <span id="frequencyValue" class="custom-span">1</span>
-    </div>
-    <button id="generateButton" class="generate-button">Generate SVG</button>
-    <a id="downloadLink" style="display: none;" download="variable_frequency_wave.svg">Download SVG</a>
 
-    <!-- SVG preview container -->
-    <div id="previewContainer">
-        <svg id="preview" width="800" height="100" xmlns="http://www.w3.org/2000/svg">
-            <path fill="none" stroke="white" stroke-width="2" />
-        </svg>
+<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Variable Frequency Sine Wave Generator</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <div class="wrapper">
+        <div class="controls-panel">
+            <div>
+                <h1 class="h1">Frequency<br/>Generator</h1>
+            </div>
+            <div class="controls-container">
+                <p
+                    style="flex-grow: 0; flex-shrink: 0; font-size: 20px; font-weight: 700; text-align: left; color: #ffecd1;">
+                    Waveform
+                </p>
+                <div class="dropdown-container">
+                    <select id="waveformSelector" class="custom-dropdown">
+                        <option value="variableSine">Variable Sine Wave</option>
+                        <option value="sawtooth">Sawtooth Wave</option>
+                        <option value="triangle">Triangle Wave</option>
+                        <option value="square">Square Wave</option>
+                    </select>
+                    <svg width="22" height="12" viewBox="0 0 22 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="custom-arrow">
+                        <path d="M1.00098 0.75L11.001 10.75L21.001 0.75" stroke="#FFECD1"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="controls-container">
+                <p
+                    style="flex-grow: 0; flex-shrink: 0; font-size: 20px; font-weight: 700; text-align: left; color: #ffecd1;">
+                    Frequency
+                </p>
+                <div class="slider-container">
+                    <input type="range" id="frequencySlider" min="1" max="20" value="1" step="0.1">
+                    <span id="frequencyValue" class="custom-span">1</span>
+                </div>
+            </div>
+            <div
+                <button id="generateButton" class="generate-button">Download SVG</button>
+                <a id="downloadLink" style="display: none;" download="variable_frequency_wave.svg">Download SVG</a>
+            </div>
+        </div>
+        <div
+            style="display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 1; position: relative; overflow: hidden; gap: 10px; padding-left: 39px; padding-right: 39px; padding-top: 479px; padding-bottom: 479px;">
+            <!-- SVG preview container -->
+            <div id="previewContainer">
+                <svg id="preview" width="800" height="100" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="none" stroke="#FFECD1" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
     </div>
-</div>
-<script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
+
 </html>

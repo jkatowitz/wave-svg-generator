@@ -1,36 +1,57 @@
 /* CSS stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@400;600&display=swap');
+
 body {
-    background-color: #383B4E;
+    background-color: #001524;
     font-family: 'Inter', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    background: #001524;
+    height: 100vh;
+    width: 100vw;
+}
+
+.h1 {
+    color: #FFECD1;
+    font-family: 'Inter';
+    font-size: 48px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -1.44px;
 }
 
 .custom-label {
-    font-family: 'Inter SemiBold', sans-serif;
-    font-size: 24px;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.custom-span {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.generate-button {
-    width: 190px;
-    height: 45px;
-    border-radius: 10px;
-    background: #FFF;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    color: #FFECD1;
+    font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    color: #000;
+    letter-spacing: -0.6px;
+}
+
+.generate-button {
+    display: flex;
+    width: 100%;
+    height: 57px;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FFECD1;
+    background-color: none;
+    gap: 10px;
+    flex-shrink: 0;
+    font-family: 'Inter', sans-serif;
+    color: #FFECD1;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
     cursor: pointer;
-    margin-bottom: 20px;
 }
 
 .container-v {
@@ -41,12 +62,196 @@ body {
     height: 100vh;
 }
 
-.container-controls {
+.controls-panel {
+    display: flex;
+    width: 20%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+    gap: 50px;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding-left: 53px;
+    padding-right: 53px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.controls-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    width: auto;
-    height: auto;
-    padding: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    width: 100%;
+    gap: 30px;
+}
+
+.dropdown-container {
+    width: 100%;
+    position: relative;
+    padding: none;
+    margin: none;
+}
+
+.slider-container {
+    width: 100%;
+    height: 44px;
+    position: relative;
+    padding: none;
+    margin: none;
+}
+
+/* Custom CSS for the dropdown */
+#waveformSelector {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #FFECD1;
+    -webkit-appearance: none;
+    /* Removes default chrome and safari style */
+    -moz-appearance: none;
+    /* Removes default style Firefox */
+    appearance: none;
+    /* Removes default style */
+    background-color: transparent;
+    color: #FFECD1;
+    position: relative;
+    font-size: 16px;
+    text-align: left;
+}
+
+.custom-dropdown {
+    width: 100%;
+    height: 50px;
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 400;
+    border-bottom: 1px solid #FFECD1;
+    /* Bottom border color */
+    border-radius: 0%;
+    background-color: transparent;
+    /* Transparent background */
+    color: #FFECD1;
+    /* Text color */
+    font-size: 16px;
+    /* Font size */
+    padding: 10px 40px 10px 0px;
+    /* Padding for text and space for arrow */
+    -webkit-appearance: none;
+    /* Removes default Chrome and Safari style */
+    -moz-appearance: none;
+    /* Removes default style in Firefox */
+    appearance: none;
+    /* Removes default style in modern browsers */
+    position: relative;
+    /* Needed for absolute positioning of the arrow */
+}
+
+/* Custom arrow */
+#waveformSelector::-ms-expand {
+    display: none;
+    /* For IE11 */
+}
+
+.custom-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.custom-dropdown.active {
+    /* Styles for when the dropdown is active (e.g., expanded) */
+    background-color: #f0f0f0;
+    /* Example background color */
+    color: #333;
+    /* Example text color */
+}
+
+.custom-arrow.active {
+    /* Styles for the arrow when the dropdown is active */
+    /* Example: rotate the arrow */
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Hide the default arrow in browsers that support this feature */
+#waveformSelector::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+/* General styling for the range input */
+#frequencySlider {
+    -webkit-appearance: none;
+    /* Override default appearance */
+    width: 100%;
+    /* Full-width */
+    background: transparent;
+    /* Transparent background */
+}
+
+/* Styling the track */
+#frequencySlider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 1px;
+    background: #FFECD1;
+}
+
+#frequencySlider::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    background: #FFECD1;
+}
+
+#frequencySlider::-ms-track {
+    width: 100%;
+    height: 1px;
+    background: #FFECD1;
+}
+
+/* Styling the thumb (the slider handle) */
+#frequencySlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #FFECD1;
+    cursor: pointer;
+    margin-top: -7px;
+    /* Centers the thumb on the track */
+}
+
+#frequencySlider::-moz-range-thumb {
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #FFECD1;
+    cursor: pointer;
+}
+
+#frequencySlider::-ms-thumb {
+    border: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #FFECD1;
+    cursor: pointer;
+}
+
+.custom-span {
+    position: absolute;
+    font-family: 'IBM Plex Mono', monospace;
+    /* Initial position; will be updated by JavaScript */
+    left: 0;
+    top: 30px;
+    /* Adjust as needed based on your design */
+    color: #FFECD1;
 }
