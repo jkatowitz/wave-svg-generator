@@ -1,5 +1,5 @@
 /* CSS stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@200;400;600&display=swap');
 
 body {
     background-color: #001524;
@@ -278,6 +278,16 @@ body {
     height: 100px;
 }
 
+.h2 {
+    color: #ffecd183;
+    font-family: 'IBM Plex Mono';
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 200;
+    letter-spacing: -1px;
+    text-decoration: underline;
+}
+
 @media only screen and (max-width: 600px) {
     .controls-panel {
         max-width: 95%;
@@ -369,4 +379,14 @@ body {
     .generate-button {
         margin-top: 20px;
     }
+    .h2 {
+        color: #ffecd183;
+        font-family: 'IBM Plex Mono';
+        font-size: 14px;
+        line-height: normal;
+        font-weight: 200;
+        letter-spacing: -1px;
+        text-decoration: underline;
+        text-align: center;
+    }    
 }
