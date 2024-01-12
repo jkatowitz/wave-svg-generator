@@ -10,6 +10,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-wrap: wrap;
     overflow: hidden;
     background: #001524;
     height: 100vh;
@@ -255,4 +256,117 @@ body {
     top: 40px;
     /* Adjust as needed based on your design */
     color: #FFECD1;
+}
+
+.preview-container {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    flex-grow: 1; 
+    position: relative; 
+    overflow: hidden; 
+    gap: 10px;
+    padding-left: 39px; 
+    padding-right: 39px; 
+    padding-top: 479px; 
+    padding-bottom: 479px;
+}
+
+.svg-render {
+    width: 800px;
+    height: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+    .controls-panel {
+        max-width: 95%;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex-grow: 0;
+        flex-shrink: 0;
+        gap: 20px;
+        height: auto;
+        position: relative;
+        overflow: hidden;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        overflow: hidden;
+        background: #001524;
+        height: 100vh;
+        width: 100%;
+    }
+    .h1 {
+        font-size: 24px;
+    }
+    .controls-container {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        flex-grow: 0;
+        flex-shrink: 0;
+        position: relative;
+        width: 100%;
+        gap: 20px;
+    }
+    .custom-dropdown {
+        width: 100%;
+        height: 50px;
+        border: none;
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: 400;
+        border-bottom: 1px solid #FFECD1;
+        /* Bottom border color */
+        border-radius: 0%;
+        background-color: transparent;
+        /* Transparent background */
+        color: #FFECD1;
+        /* Text color */
+        font-size: 16px;
+        /* Font size */
+        padding: 10px 10px 10px 0px;
+        /* Padding for text and space for arrow */
+        -webkit-appearance: none;
+        /* Removes default Chrome and Safari style */
+        -moz-appearance: none;
+        /* Removes default style in Firefox */
+        appearance: none;
+        /* Removes default style in modern browsers */
+        position: relative;
+        /* Needed for absolute positioning of the arrow */
+    }
+    .preview-container {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        flex-grow: 1; 
+        position: relative; 
+        overflow: hidden; 
+        gap: 10px;
+        padding-left: 0px; 
+        padding-right: 0px; 
+        padding-top: 0px; 
+        padding-bottom: 0px;
+    }
+    .svg-render {
+        width: 380px;
+        height: 100px;
+    }
+    .generate-button {
+        margin-top: 20px;
+    }
 }
